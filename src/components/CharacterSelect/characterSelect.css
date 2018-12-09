@@ -1,0 +1,101 @@
+.CharacterSelect {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5vh 5vw;
+  position: relative;
+}
+
+.inChar {
+  position: relative;
+  height: 12vh;
+  width: 6vw;
+  /* height: 100%; */
+  /* width: 100%; */
+}
+
+.inCharImg {
+  height: 100%;
+  width: 100%;
+}
+
+.inCharName::placeholder {
+  color: white;
+}
+
+.inCharName, .inCharEditName {
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  background: #333333;
+  width: 98%;
+  height: 20%;
+  z-index: 999;
+  color: white;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.inCharEditName {
+  border: 2px solid #333333;
+  border-radius: 30px;
+  width: 95%;
+  background: white;
+  color: #333333
+}
+
+.inCharName {
+  border: none;
+}
+
+.inChar:hover {
+  transform: scale(1.05);
+  border-color: #00aeff;
+  box-shadow: 0 0 1rem #00aeff;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.editButtons, .addButtons {
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  height: 12vh;
+  width: 6vw;
+}
+
+.editButtons {
+  bottom: 0;
+  left: 3%;
+}
+
+
+.canEdit, .canSubmit, .canAdd, .addSubmit {
+  background: #333333;
+  font-size:.8em;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  margin: auto;
+  height: 30%;
+  width: 80%;
+  outline: none;
+}
+
+.addButtons {
+  bottom: 0;
+  right: 3%;
+}
+
+.canEdit:hover, .canSubmit:hover, .canAdd:hover, .addSubmit:hover{
+  background: gray;
+  box-shadow: 0 12px 16px 0 black;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,19 @@
+.navBar {
+  background: url(https://www.thetanooki.com/wp-content/uploads/2015/02/150202smashu.jpg) no-repeat fixed;
+  background-size: 100% 100%;
+  display: flex;
+  position: absolute;
+  height: 13%;
+  width: 100%;
+}
+
+.smashButton {
+  /* background: blue; */
+  margin:  4vh 13vw; 
+  height: 55%;
+  width: 17%;
+}
+
+.smashButton:hover {
+  cursor: pointer;
+}
