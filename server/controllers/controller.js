@@ -28,12 +28,18 @@ const updateCharacters = (req, res, next) => {
   // console.log(index, characters[index])
 }
 
+const deleteCharacter = (req, res, next) => {
+  const index = characters.findIndex(characters => +characters.OwnerId === +req.params.id);
+  characters.splice(index, 1)
+  res.status(200).json( characters )
+}
+
 addCharacter = (req, res, next) => {
-  // const index = characters.findIndex(characters => +characters.OwnerId === req.params.id);
+  // const index = characters.findIndex(characters => +characters.OwnerId === +req.params.id);
   // characters[index] = req.body
   let obj1 = req.body
-  obj1.
-  characters.push(req.body)
+  obj1.OwnerId = newId
+  characters.push(obj1)
   newId = newId++
   res.json(characters)
 }
@@ -41,5 +47,6 @@ addCharacter = (req, res, next) => {
 module.exports = {
   getCharacters,
   updateCharacters,
-  addCharacter
+  addCharacter,
+  deleteCharacter
 }

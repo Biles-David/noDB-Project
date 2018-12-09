@@ -1,0 +1,29 @@
+.addScreen{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  flex-direction: column;
+  height: 40%;
+  width: 15%;
+  background: #bbbbbb;
+  border-radius: 30px;
+  border-style: inset;
+  top: 13%;
+  z-index: 1002;
+  left: 41%;
+}
+
+.midText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mario {
+  height: 20vh;
+  width: 8vw;
+}
+
+.hidden {
+  display: none;
+}

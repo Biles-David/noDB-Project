@@ -32,7 +32,11 @@ class Characterselect extends Component {
                 <input className={this.props.canEdit? 'inCharEditName' :"inCharName"} 
                 name={e.OwnerId} placeholder={character[i].Name}
                 onChange={this.handleChange} 
-                disabled={this.props.canEdit? false: true}></input>
+                disabled={this.props.canEdit? false: true}>{character.Name}</input>
+                <button 
+                  className={this.props.canEdit? "deleteBtn" : "hidden"} 
+                  onClick={() => this.props.deleteCharacter(e.OwnerId)}
+                  name={e.OwnerId}>-</button>
               </div>
         }
       )
@@ -47,7 +51,8 @@ class Characterselect extends Component {
         </div>
         <div className="addButtons">
           <button className="canAdd" onClick={this.props.handleCanAddClick}>{this.props.canAdd?"Cancel":"Add New"}</button>
-          <button className={this.props.canAdd? "addSubmit" : "hidden"}>Submit</button>
+          {/* Moved this functionality */}
+          {/* <button className={this.props.canAdd? "addSubmit" : "hidden"}>Submit</button> */}
         </div>
       </div>
     )

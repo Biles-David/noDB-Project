@@ -4,7 +4,7 @@ import axios from "axios";
 import Characterselect from './components/CharacterSelect/Characterselect'
 import Fighters from './components/FighterSelect/fighters'
 import NavBar from './components/NavBar/NavBar'
-import AddCharacter from './components/AddCharacter'
+import AddCharacter from './components/addCharacter/AddCharacter'
 
 class App extends Component {
   constructor (props){
@@ -14,13 +14,14 @@ class App extends Component {
       fighters: [],
       canEdit: false,
       isDataLoaded: false,
-      canAdd: false
+      canAdd: true,
     }
     this.addFighter = this.addFighter.bind(this)
     this.removeFighter = this.removeFighter.bind(this)
     this.handleCanEditClick = this.handleCanEditClick.bind(this)
     this.handleCanAddClick = this.handleCanAddClick.bind(this)
     this.editChar = this.editChar.bind(this)
+    this.deleteCharacter = this.deleteCharacter.bind(this)
   }
 
   componentDidMount(){
@@ -31,12 +32,24 @@ class App extends Component {
       })
   }
 
+  addCharacter(){
+
+  }
+
   editChar(Name, id){
     console.log(Name, id)
     axios.put(`/api/characters/${id}`, {Name})
       .then(response => {
-        // this.setState({canEdit: false})
-        console.log(response.data);
+        this.setState({characters: response.data, canEdit: false})
+        // console.log(response.data);
+      })
+  }
+
+  deleteCharacter(id){
+    axios.delete(`/api/characters/${id}`)
+      .then(response => {
+        this.setState({characters: response.data})
+        // console.log(response.data, id)
       })
   }
 
@@ -91,8 +104,10 @@ class App extends Component {
             canAdd={this.state.canAdd}
             handleCanAddClick={this.handleCanAddClick}
             fighters={this.state.fighters}
-            editChar={this.editChar}/>
-            <AddCharacter className={this.state.canAdd? "addCharacter" : "hidden"}/>
+            editChar={this.editChar}
+            deleteCharacter={this.deleteCharacter}/>
+            <AddCharacter className={this.state.canAdd? "addCharacter" : "hidden"} canAdd={this.state.canAdd}
+            addCharacter={this.props.addCharacter}/>
         </div>
         <footer className ="CharacterFight">
           <Fighters fighters={this.state.fighters} removeFighter={this.removeFighter}/>

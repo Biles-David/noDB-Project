@@ -31,7 +31,7 @@
   background: #333333;
   width: 98%;
   height: 20%;
-  z-index: 999;
+  z-index: 1000;
   color: white;
   align-items: flex-end;
   position: absolute;
@@ -94,6 +94,26 @@
 .canEdit:hover, .canSubmit:hover, .canAdd:hover, .addSubmit:hover{
   background: gray;
   box-shadow: 0 12px 16px 0 black;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background: #888888;
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+  border: none;
+  position: absolute;
+  z-index: 1001;
+  border-radius: 50%;
+  opacity: .8;
+  top: 0;
+  right: 0;
+  outline: none;
+}
+
+.deleteBtn:hover {
+  cursor: pointer;
 }
 
 .hidden {
