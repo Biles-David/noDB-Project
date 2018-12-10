@@ -12,7 +12,7 @@
   height: 50vh;
   justify-content: center;
   align-items: center;
-  background: #333333;
+  background: linear-gradient(#1e1e1e, #333333);
   box-shadow: 0px 4px 15px 15px #333333;
 }
 

@@ -115,12 +115,11 @@ class App extends Component {
 
     if(!isDataLoaded){return <Loading/>}else{
     return (
-      // this.state.isDataLoaded && <loading />
       <div className="App">
         <ReactPlayer 
         className ="hidden"
         url="https://www.youtube.com/watch?v=JD33HjaO4iA"
-        playing
+        // playing
         />
         <nav>
           <NavBar fighters={this.state.fighters} randomNumber={this.randomNumber}/>

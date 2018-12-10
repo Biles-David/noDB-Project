@@ -26,7 +26,7 @@
   font-size: 1em;
   font-family: 'Times New Roman';
   font-weight: bold;
-  background: #333333;
+  background: #2e2e2e;
   width: 98%;
   height: 25%;
   z-index: 1000;
@@ -72,7 +72,7 @@
 
 
 .canEdit, .canSubmit, .canAdd, .addSubmit {
-  background: #333333;
+  background: #2e2e2e;
   font-size:.8em;
   font-weight: bold;
   color: white;
