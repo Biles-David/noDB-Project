@@ -18,6 +18,10 @@
   width: 115%;
 }
 
+.fighterImg:hover {
+  cursor: pointer;
+}
+
 .fighterName {
   text-align: center;
   border: 1px solid #223342;
@@ -37,4 +41,13 @@
 
 .fighterName::placeholder {
   color: #223342;
+}
+
+.newImg {
+  position: absolute;
+  height: 74%;
+  width: 25%;
+  top: 12%;
+  right: 62%;
+  border: none;
 }

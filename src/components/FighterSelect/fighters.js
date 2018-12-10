@@ -15,6 +15,7 @@ class Fighters extends Component {
         var bigPic = fighters.map( (e,i) => {
           return <div className="fighterSelect">
             <img className="fighterImg" src={fighters[i].MainImageUrl} onClick={ () => this.props.removeFighter(fighters[i])}/>
+            <img className="newImg" src={fighters[i].subImg}/>
             <input className ="fighterName" placeholder={`Player ${i + 1}`}/>
           </div>
         }) 

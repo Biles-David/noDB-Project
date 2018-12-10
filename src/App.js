@@ -5,6 +5,7 @@ import Characterselect from './components/CharacterSelect/Characterselect'
 import Fighters from './components/FighterSelect/fighters'
 import NavBar from './components/NavBar/NavBar'
 import AddCharacter from './components/addCharacter/AddCharacter'
+import ReactPlayer from 'react-player'
 
 class App extends Component {
   constructor (props){
@@ -14,7 +15,7 @@ class App extends Component {
       fighters: [],
       canEdit: false,
       isDataLoaded: false,
-      canAdd: true,
+      canAdd: false,
     }
     this.addFighter = this.addFighter.bind(this)
     this.removeFighter = this.removeFighter.bind(this)
@@ -22,18 +23,38 @@ class App extends Component {
     this.handleCanAddClick = this.handleCanAddClick.bind(this)
     this.editChar = this.editChar.bind(this)
     this.deleteCharacter = this.deleteCharacter.bind(this)
+    this.addCharacter = this.addCharacter.bind(this)
   }
 
   componentDidMount(){
     axios(`/api/characters`)
       .then(response => {
-        console.log(response)
+        // console.log(response)
         this.setState({ characters: response.data, isDataLoaded: true })
       })
   }
 
-  addCharacter(){
+  randomNumber(arr){
+    function random(){
+      return Math.floor(Math.random() * ((arr.length + 1) - 1) + 1)
+    }
+    return arr[random() - 1]
+  }
 
+  addCharacter(name, url){
+    let newChar = {
+      Name: name,
+      ThumbnailUrl: url,
+      subImg: url,
+      MainImageUrl: "http://kuroganehammer.com/Smash4/logo2/Shulk.png"
+    }
+    axios.post(`/api/characters`, newChar)
+      .then(response => {
+        this.setState({
+          characters: response.data, 
+          canAdd: false
+        })
+      })
   }
 
   editChar(Name, id){
@@ -92,8 +113,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <ReactPlayer 
+        className ="hidden"
+        url="https://www.youtube.com/watch?v=JD33HjaO4iA"
+        playing
+        />
         <nav>
-          <NavBar/>
+          <NavBar fighters={this.state.fighters} randomNumber={this.randomNumber}/>
         </nav>
         <div className="fight">
           <Characterselect characters={this.state.characters} 
@@ -107,7 +133,7 @@ class App extends Component {
             editChar={this.editChar}
             deleteCharacter={this.deleteCharacter}/>
             <AddCharacter className={this.state.canAdd? "addCharacter" : "hidden"} canAdd={this.state.canAdd}
-            addCharacter={this.props.addCharacter}/>
+            addCharacter={this.addCharacter}/>
         </div>
         <footer className ="CharacterFight">
           <Fighters fighters={this.state.fighters} removeFighter={this.removeFighter}/>

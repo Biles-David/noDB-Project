@@ -12,6 +12,10 @@ class Characterselect extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  handleClick(){
+    this.setState({newName: ''})
+  }
+
   handleChange(e){
     // console.log(e.target.name)
     this.setState({
