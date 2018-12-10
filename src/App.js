@@ -6,6 +6,7 @@ import Fighters from './components/FighterSelect/fighters'
 import NavBar from './components/NavBar/NavBar'
 import AddCharacter from './components/addCharacter/AddCharacter'
 import ReactPlayer from 'react-player'
+import Loading from './components/loading/loading';
 
 class App extends Component {
   constructor (props){
@@ -109,14 +110,17 @@ class App extends Component {
     this.setState({fighters: arr})
   }
 
-
   render() {
+    let {isDataLoaded} = this.state
+
+    if(!isDataLoaded){return <Loading/>}else{
     return (
+      // this.state.isDataLoaded && <loading />
       <div className="App">
         <ReactPlayer 
         className ="hidden"
         url="https://www.youtube.com/watch?v=JD33HjaO4iA"
-        playing
+        // playing
         />
         <nav>
           <NavBar fighters={this.state.fighters} randomNumber={this.randomNumber}/>
@@ -139,8 +143,8 @@ class App extends Component {
           <Fighters fighters={this.state.fighters} removeFighter={this.removeFighter}/>
         </footer>
       </div>
-    );
-  }
+    )
+  }}
 }
 
 export default App;

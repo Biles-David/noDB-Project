@@ -1,0 +1,18 @@
+.SSBU, .addLogo {
+  position: absolute;
+}
+
+.SSBU {
+  height: 100px;
+  top: 15vh;
+  right: 30vw;
+}
+
+.addLogo {
+  height: 60px;
+  width: 15vw;
+  background: #dddddd;
+  border-radius: 40px;
+  top: -10vh;
+  border: inset;
+}
