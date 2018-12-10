@@ -1,0 +1,13 @@
+.mini {
+  position: absolute;
+  top: 4.4vh;
+  right: 4.9vw;
+  z-index: 9999;
+  height: 3px;
+  width: 3px;
+}
+
+.mini:hover {
+  height: 200px;
+  width: 200px;
+}

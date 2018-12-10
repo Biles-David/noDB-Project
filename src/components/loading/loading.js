@@ -1,8 +1,6 @@
 import React from 'react'
-import ReactLoading from "react-loading"
 import './loading.css'
 import HeaderLogo from '../HeaderLogo/HeaderLogo'
-// import {Section, Title, Article, Prop, list} from "./generic";
 
 const Loading = props => (
   <section className="parentLoading">

@@ -19,17 +19,7 @@
 .CharacterFight {
   height: 40vh;
   width: 100vw;
-  /* background: #7CD6E9 */
 }
-
-/* .addCharacter {
-  position: absolute;
-  z-index: 1001;
-  height: 100%;
-  width: 50%;
-  background: white;
-
-} */
 
 .hidden {
   display: none;
