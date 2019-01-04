@@ -119,7 +119,7 @@ class App extends Component {
         <ReactPlayer 
         className ="hidden"
         url="https://www.youtube.com/watch?v=JD33HjaO4iA"
-        playing
+        // playing
         />
         <nav>
           <NavBar fighters={this.state.fighters} randomNumber={this.randomNumber}/>
