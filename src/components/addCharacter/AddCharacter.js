@@ -31,7 +31,7 @@ class AddCharacter extends Component {
       <div className= {this.props.canAdd? "addScreen": "hidden"} > 
         <div className="midText">
         <HeaderLogo canAdd={this.props.canAdd}/>
-          <img className="mario" src="https://i.pinimg.com/originals/fd/6c/8d/fd6c8d4067c5cdf0ee2caeb92f6f9413.png"/>
+          <img alt='i-want-you' className="mario" src="https://i.pinimg.com/originals/fd/6c/8d/fd6c8d4067c5cdf0ee2caeb92f6f9413.png"/>
           <br/>
           <span>Character Name:</span><input value={this.state.charName} name="charName" onChange={this.handleChange}></input>
           <br/>

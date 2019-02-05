@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './fighters.css'
+import './Fighters.css'
 
 class Fighters extends Component {
   constructor(props){
@@ -14,8 +14,8 @@ class Fighters extends Component {
         let fighters = this.props.fighters
         var bigPic = fighters.map( (e,i) => {
           return <div className="fighterSelect">
-            <img className="fighterImg" src={fighters[i].MainImageUrl} onClick={ () => this.props.removeFighter(fighters[i])}/>
-            <img className="newImg" src={fighters[i].subImg}/>
+            <img alt='fighter' className="fighterImg" src={fighters[i].MainImageUrl} onClick={ () => this.props.removeFighter(fighters[i])}/>
+            <img alt='new-fighter' className="newImg" src={fighters[i].subImg}/>
             <input className ="fighterName" placeholder={`Player ${i + 1}`}/>
           </div>
         }) 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
-import Characterselect from './components/CharacterSelect/Characterselect'
-import Fighters from './components/FighterSelect/fighters'
+import CharacterSelect from './components/CharacterSelect/CharacterSelect'
+import Fighters from './components/Fighters/Fighters'
 import NavBar from './components/NavBar/NavBar'
-import AddCharacter from './components/addCharacter/AddCharacter'
+import AddCharacter from './components/AddCharacter/AddCharacter'
 import ReactPlayer from 'react-player'
-import Loading from './components/loading/loading';
+import Loading from './components/Loading/Loading';
 
 class App extends Component {
   constructor (props){
@@ -30,7 +30,6 @@ class App extends Component {
   componentDidMount(){
     axios(`/api/characters`)
       .then(response => {
-        // console.log(response)
         this.setState({ characters: response.data, isDataLoaded: true })
       })
   }
@@ -63,7 +62,6 @@ class App extends Component {
     axios.put(`/api/characters/${id}`, {Name})
       .then(response => {
         this.setState({characters: response.data, canEdit: false})
-        // console.log(response.data);
       })
   }
 
@@ -71,7 +69,6 @@ class App extends Component {
     axios.delete(`/api/characters/${id}`)
       .then(response => {
         this.setState({characters: response.data})
-        // console.log(response.data, id)
       })
   }
 
@@ -100,7 +97,6 @@ class App extends Component {
     if(arr.length < 5){
     this.setState({fighters: arr, fighterreload: true})
     }
-    // console.log(val)
   }
 
   removeFighter(val) {
@@ -119,13 +115,13 @@ class App extends Component {
         <ReactPlayer 
         className ="hidden"
         url="https://www.youtube.com/watch?v=JD33HjaO4iA"
-        // playing
+        playing
         />
         <nav>
           <NavBar fighters={this.state.fighters} randomNumber={this.randomNumber}/>
         </nav>
         <div className="fight">
-          <Characterselect characters={this.state.characters} 
+          <CharacterSelect characters={this.state.characters} 
             handleKeyPress={this.handleKeyPress} 
             addFighter={this.addFighter}
             canEdit={this.state.canEdit}

@@ -1,15 +1,25 @@
 .CharacterSelect {
   display: flex;
+  position: relative;
+  top: 25px;
+  width: 100vw;
+  height: 45vh;
+}
+
+.character_container {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 5vh 5vw;
-  position: relative;
+  width: 95%;
+  height: 100%;
+  margin: auto;
 }
 
 .inChar {
   position: relative;
-  height: 12vh;
-  width: 6vw;
+  height: 108px;
+  width: 108px;
+  margin: 0 .5px;
 }
 
 .inCharImg {
@@ -27,8 +37,8 @@
   font-family: 'Times New Roman';
   font-weight: bold;
   background: #2e2e2e;
-  width: 98%;
-  height: 25%;
+  width: 100%;
+  height: 23%;
   z-index: 1000;
   color: white;
   align-items: flex-end;
@@ -39,7 +49,7 @@
 
 .inCharEditName {
   border: 2px solid #333333;
-  border-radius: 30px;
+  border-radius: 10px;
   width: 95%;
   background: white;
   color: #333333
@@ -60,39 +70,47 @@
 .editButtons, .addButtons {
   display: flex;
   flex-direction: column;
-  position:absolute;
+  position: absolute;
   height: 13vh;
   width: 6vw;
 }
 
 .editButtons {
-  bottom: 0;
-  left: 3%;
-}
-
-
-.canEdit, .canSubmit, .canAdd, .addSubmit {
-  background: #2e2e2e;
-  font-size:.8em;
-  font-weight: bold;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  margin: auto;
-  height: 30%;
-  width: 80%;
-  outline: none;
+  display: flex;
+  bottom: -5%;
+  left: 5%;
 }
 
 .addButtons {
-  bottom: 0;
-  right: 3%;
+  bottom: -5%;
+  right: 5%;
 }
+
+.canEdit, .canSubmit, .canAdd, .addSubmit {
+  /* background: #2e2e2e; */
+  background: none;
+  font-size: .8em;
+  font-weight: bold;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: auto;
+  height: 30px;
+  width: 80px;
+  outline: none;
+}
+
 
 .canEdit:hover, .canSubmit:hover, .canAdd:hover, .addSubmit:hover{
   background: gray;
-  box-shadow: 0 12px 16px 0 black;
+  box-shadow: 0 8px 8px 0 black;
   cursor: pointer;
+}
+
+.canEdit:active, .canSubmit:active, .canAdd:active, .addSubmit:active{
+  transform: translateY(1px);
+  box-shadow: 0px 7px 8px 0 black;
+  transition-delay: 0.02s
 }
 
 .deleteBtn {
@@ -116,4 +134,18 @@
 
 .hidden {
   display: none;
+}
+
+@media(max-width: 1600px){
+  .inChar {
+    height: 90px;
+    width: 90px;
+  }
+}
+
+@media(max-width: 1330px) {
+  .inChar {
+    height: 75px;
+    width: 75px;
+  }
 }

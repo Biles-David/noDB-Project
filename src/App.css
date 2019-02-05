@@ -7,18 +7,23 @@
   width: 100vw;
 }
 
+.App nav {
+  z-index: 100000;
+}
+
 .fight {
+  position: absolute;
   margin: 10vh 0vw 5vh 0vw;
-  height: 50vh;
-  justify-content: center;
-  align-items: center;
+  height: 51vh;
   background: linear-gradient(#1e1e1e, #333333);
   box-shadow: 0px 4px 15px 15px #333333;
 }
 
 .CharacterFight {
+  position: absolute;
   height: 40vh;
   width: 100vw;
+  bottom: 0;
 }
 
 .hidden {
